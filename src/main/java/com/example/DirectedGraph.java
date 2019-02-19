@@ -12,7 +12,7 @@ public class DirectedGraph<V> extends UndirectedGraph<V> {
     }
 
     @Override
-    protected void addEdgeInternal(V start, V end, Edge<V> edge) {
+    protected final void addEdgeInternal(V start, V end, Edge<V> edge) {
         vertices.get(start).add(edge);
     }
 }

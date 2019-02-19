@@ -3,12 +3,20 @@ package com.example;
 import java.util.Objects;
 
 public abstract class Edge<V> {
-    public final V start;
-    public final V end;
+    final V start;
+    final V end;
 
     public Edge(V start, V end) {
         this.start = start;
         this.end = end;
+    }
+
+    public V getStart() {
+        return start;
+    }
+
+    public V getEnd() {
+        return end;
     }
 
     @Override

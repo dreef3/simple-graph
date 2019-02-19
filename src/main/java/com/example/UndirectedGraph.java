@@ -52,7 +52,7 @@ public class UndirectedGraph<V> implements Iterable<V> {
         }
     }
 
-    public List<Edge<V>> getPath(V start, V end) {
+    public final List<Edge<V>> getPath(V start, V end) {
         lock.readLock().lock();
         try {
 
@@ -107,17 +107,17 @@ public class UndirectedGraph<V> implements Iterable<V> {
     }
 
     @Override
-    public Iterator<V> iterator() {
+    public final Iterator<V> iterator() {
         return this.vertices.keySet().iterator();
     }
 
     @Override
-    public void forEach(Consumer<? super V> action) {
+    public final void forEach(Consumer<? super V> action) {
         this.vertices.keySet().forEach(action);
     }
 
     @Override
-    public Spliterator<V> spliterator() {
+    public final Spliterator<V> spliterator() {
         return this.vertices.keySet().spliterator();
     }
 }
